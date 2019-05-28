@@ -10,7 +10,7 @@ Likely this is just a collection of scripts, not a real replacement of *mlc*.
 ## Use `distrobuilder` to generate metadata and rootfs for LXC
 
 * Install `golang`
-* Install `distrobuilder` via `go build github.com/lxc/distrobuilder/distrobuilder
+* Install `distrobuilder` via `go build github.com/lxc/distrobuilder/distrobuilder`
 * `sudo $GOPATH/bin/distrobuilder build-lxc mlc.yml`
 
 Now the current folder should contain `meta.tar.xz` and `rootfs.tar.xz`.
@@ -39,6 +39,7 @@ for i in {1..5}; do
     sudo lxc-start mlc-$i
     sudo lxc-attach mlc-$i -- bmx7 -f0 dev=eth1.11
 done
+```
 
 ## Add delay and drops to a bridge
 
