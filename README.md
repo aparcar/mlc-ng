@@ -39,3 +39,10 @@ for i in {1..5}; do
     sudo lxc-start mlc-$i
     sudo lxc-attach mlc-$i -- bmx7 -f0 dev=eth1.11
 done
+
+## Add delay and drops to a bridge
+
+```sh
+sudo tc qdisc add dev lxcbr0 root netem delay 1000ms
+sudo tc qdisc change dev lxcbr0 root netem loss 0.1%
+```
